@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height:100%;
+                overflow-y: hidden;
+                overflow-x: hidden;
+        }
+        body{
+           
+            /* https://media.gettyimages.com/id/85757452/photo/hurricane-dean-satellite-image.jpg?s=612x612&w=0&k=20&c=0nmNMrOvv9C7YezFoDBfC8q3L-T-zIs-yI12NYigZZ8= */
+           background-image: url("Weather-app.jpg");
+           background-repeat:repeat;
+           background-size: cover;
+           width: 100%;
+            
+            overflow-y: hidden;
+        }
+        #fake{
+            height: 28%;
+            
+        }
+        #uppercon{
+            width:15rem;
+            max-height:38%;
+            color: whitesmoke;
+            display: flex;
+           
+            padding: 20px;
+            flex-flow: column;
+        }
+        #time{
+            font-size: 3rem;
+            height:4rem;
+        }
+        #day{
+            font-size: 1.9rem;
+            height:3rem;
+        }
+        #time span{
+            font-size: 1.5rem;
+        }
+        #lowercon{
+            width:100%;
+            height:30%;
+            max-height: 200px;
+            /* background-color: rgba(0, 0, 0, 0.687); */
+            display: flex;
+            overflow-x: scroll;
+            align-items: center;
+        }
+        .day{
+            min-width:16rem;
+            max-width: 400px;
+            height:80%;
+            max-height: 200px;
+            background-color: rgba(0, 0, 0, 0.457);
+            /* background-color:rgba(0, 0, 0, 0.687); */
+           margin: 1rem;
+           display: flex;
+           flex-wrap: wrap;
+           color:red;
+           border-radius: 10%;
+            
+        }
+        #clim{
+            width:10rem;
+            height:5rem;
+            background-color: rgba(0, 0, 0, 0.361);margin-top: 10px;
+           padding: 5px;
+            font-size: 1.4rem;
+            
+        }
+        .head{
+            width: 100%;
+            height: 15%;
+            background-color: rgba(0, 0, 0, 0.361);
+            color: white;
+            text-align: center;
+
+        }
+        
+        @media screen and (min-height:717px){
+            #uppercon{
+                height:45%;
+                
+                width:17rem;
+            }
+            #clim{
+                width: 15rem;
+                height: 8rem;
+                font-size: 2rem;
+            }
+            #time{
+                font-size:5rem;
+                height: 6rem;
+            }
+            #day{
+                font-size:3rem;
+                height: 4rem;
+            }
+            #fake{
+                height:32%;
+            }
+        }
+        @media screen and (min-height:1000px){
+            #clim{
+                width: 17rem;
+                height: 10rem;
+                font-size: 2.7rem;
+            }
+            #fake{
+                height:38%;
+            }
+
+        }
+
+        #img1,#img2,#img3,#img4,#img5,#img6,#img7{
+            width:50%;
+            height:85%;
+            background-image: url(ai.jpeg);
+            background-position: center;
+            background-size:contain;
+            background-repeat: no-repeat;
+           
+        }
+        #info1,#info2,#info3,#info4,#info5,#info6,#info7{
+            width:50%;
+            height: 85%;
+            /* background-color:; */
+            color: whitesmoke;
+            font-size: 1.1rem;
+            font-weight: bolder;
+            display: flex;
+            flex-flow: column;
+            font-family: 'Times New Roman', Times, serif;
+            
+            
+        }
+        .day:hover{
+            scale:1.1;
+        }
+    </style>
+</head>
+
+<body>
+    
+        <div id="uppercon">
+            <div id="time">12:30 <span>AM</span></div>
+            <div id="day">Monday, 24 May</div>
+            <div id="clim">
+                <span id="wind"> Wind:12km</span>
+                <span id="humi">Humidity:</span>
+                <span id="des"></span>
+            </div>
+        </div>
+        <div id="fake"></div>
+        <div id="lowercon">
+            <div id="mon" class="day">
+                <div class="head">Mon</div>
+                <div id="img1"></div>
+                <div id="info1">
+                    <span id="mondes">Sunny cloud</span>
+                    <span id="montemp">Temp:24C</span>
+                    <span id="monspeed">Wind:12Km</span>
+                    <span id="monhumi">Humidity:12</span>
+                </div>
+            </div>
+            <div id="tues"class="day">
+                <div class="head">Tues</div>
+                <div id="img2"></div>
+                <div id="info2">
+                    <span id="tuesdes">Sunny cloud</span>
+                    <span id="tuestemp">Temp:24C</span>
+                    <span id="tuesspeed">Wind:12Km</span>
+                    <span id="tueshumi">Humidity:12</span>
+                </div>
+            </div>
+            <div id="wed" class="day">
+                <div class="head">Wed</div>
+                <div id="img3"></div>
+                <div id="info3">
+                    <span id="weddes">Sunny cloud</span>
+                    <span id="wedtemp">Temp:24C</span>
+                    <span id="wedspeed">Wind:12Km</span>
+                    <span id="wedhumi">Humidity:12</span>
+                </div>
+            </div>
+            <div id="thur"class="day">
+                <div class="head">Thur</div>
+                <div id="img4"></div>
+                <div id="info4">
+                    <span id="thrdes">Sunny cloud</span>
+                    <span id="thrtemp">Temp:24C</span>
+                    <span id="thrspeed">Wind:12Km</span>
+                    <span id="thrhumi">Humidity:12</span>
+                </div>
+            </div>
+            <div id="fri" class="day">
+                <div class="head">Fri</div>
+                <div id="img5"></div>
+            <div id="info5">
+                <span id="frides">Sunny cloud</span>
+                <span id="fritemp">Temp:24C</span>
+                <span id="frispeed">Wind:12Km</span>
+                <span id="frihumi">Humidity:12</span>
+            </div></div>
+            <div id="sat" class="day">
+                <div class="head">Sat</div>
+                <div id="img6"></div>
+                <div id="info6">
+                    <span id="satdes">Sunny cloud</span>
+                    <span id="sattemp">Temp:24C</span>
+                    <span id="satspeed">Wind:12Km</span>
+                    <span id="sathumi">Humidity:12</span>
+                </div>
+            </div>
+            <div id="sun" class="day">
+                <div class="head">Sun</div>
+                <div id="img7"></div>
+                <div id="info7">
+                    <span id="sundes">Sunny cloud</span>
+                    <span id="suntemp">Temp:24C</span>
+                    <span id="sunspeed">Wind:12Km</span>
+                    <span id="sunhumi">Humidity:12</span>
+                </div>
+            </div>
+        </div>
+    <script>
+        function tell(a)
+        {
+            let shower_rain="https://cdn-icons-png.flaticon.com/128/4622/4622223.png"
+            let sunny_cloudy="https://cdn-icons-png.flaticon.com/128/4150/4150891.png"
+            let cloudy="https://cdn-icons-png.flaticon.com/128/5828/5828453.png"
+            let sunny="https://cdn-icons-png.flaticon.com/128/365/365237.png"
+            let rainy="https://cdn-icons-png.flaticon.com/128/1779/1779927.png"
+            let rain="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9AYOZb4BIFyd7MhQER7a4qsH7fyJQ5oyxew&usqp=CAU"
+            let broken_c="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4RqM9v0MHG14BzAx5JfIsQeR9_V6JWB7Kzw&usqp=CAU";
+            if(a=="01n"||a=="01d")
+                return sunny;
+            else if(a=="02n")
+                return sunny_cloudy;
+            else if(a=="03n")
+                return cloudy;
+            else if(a=="09n")
+                return shower_rain;
+            else if(a=="11n")
+                return rainy;
+            else if(a=="04d")
+                return broken_c;
+            else if(a=="10n")
+                return rain;
+            
+            
+            
+        }
+       
+        let p=fetch('https://api.openweathermap.org/data/2.5/forecast?lat=26.4077&lon=80.3683&cnt=7&units=metric&appid=3c5422c7bc9d222901b5723e1ebccd24')
+        p.then((value1)=>{
+            return value1.json()
+        }).then((value2)=>{
+             
+            console.log(value2.list[1])
+            document.getElementById("humi").innerHTML="Humidity:"+value2.list[0].main.humidity+"%";
+            document.getElementById("wind").innerHTML="Wind :"+value2.list[0].wind.speed+" Km/h";
+            document.getElementById("des").innerHTML=value2.list[0].weather[0].description;
+            //Monday
+            let a=value2.list[0].weather[0].icon
+            document.getElementById("img1").style.backgroundImage="url("+tell(a)+")";
+            document.getElementById("monhumi").innerHTML="Humidity:"+value2.list[0].main.humidity+"%";
+            document.getElementById("monspeed").innerHTML="Wind:"+value2.list[0].wind.speed+" Km/h";
+            document.getElementById("mondes").innerHTML=value2.list[0].weather[0].description;
+            document.getElementById("montemp").innerHTML="Temp. :"+value2.list[0].main.temp+"`C";
+            //Tuesday
+             a=value2.list[1].weather[0].icon
+            document.getElementById("img2").style.backgroundImage="url("+tell(a)+")";
+            document.getElementById("tueshumi").innerHTML="Humidity:"+value2.list[1].main.humidity+"%";
+            document.getElementById("tuesspeed").innerHTML="Wind:"+value2.list[1].wind.speed+" Km/h";
+            document.getElementById("tuesdes").innerHTML=value2.list[1].weather[0].description;
+            document.getElementById("tuestemp").innerHTML="Temp. :"+value2.list[1].main.temp+"`C";
+            //wed
+            a=value2.list[2].weather[0].icon
+            document.getElementById("img3").style.backgroundImage="url("+tell(a)+")";
+            document.getElementById("wedhumi").innerHTML="Humidity:"+value2.list[2].main.humidity+"%";
+            document.getElementById("wedspeed").innerHTML="Wind:"+value2.list[2].wind.speed+" Km/h";
+            document.getElementById("weddes").innerHTML=value2.list[2].weather[0].description;
+            document.getElementById("wedtemp").innerHTML="Temp. :"+value2.list[2].main.temp+"`C";
+            //thrus
+            a=value2.list[3].weather[0].icon
+            document.getElementById("img4").style.backgroundImage="url("+tell(a)+")";
+            document.getElementById("thrhumi").innerHTML="Humidity:"+value2.list[3].main.humidity+"%";
+            document.getElementById("thrspeed").innerHTML="Wind:"+value2.list[3].wind.speed+" Km/h";
+            document.getElementById("thrdes").innerHTML=value2.list[3].weather[0].description;
+            document.getElementById("thrtemp").innerHTML="Temp. :"+value2.list[3].main.temp+"`C";
+            //fri
+            a=value2.list[4].weather[0].icon
+            document.getElementById("img5").style.backgroundImage="url("+tell(a)+")";
+            document.getElementById("frihumi").innerHTML="Humidity:"+value2.list[4].main.humidity+"%";
+            document.getElementById("frispeed").innerHTML="Wind:"+value2.list[4].wind.speed+" Km/h";
+            document.getElementById("frides").innerHTML=value2.list[4].weather[0].description;
+            document.getElementById("fritemp").innerHTML="Temp. :"+value2.list[4].main.temp+"`C";
+            //sat
+            a=value2.list[5].weather[0].icon
+            document.getElementById("img6").style.backgroundImage="url("+tell(a)+")";
+            document.getElementById("sathumi").innerHTML="Humidity:"+value2.list[5].main.humidity+"%";
+            document.getElementById("satspeed").innerHTML="Wind:"+value2.list[5].wind.speed+" Km/h";
+            document.getElementById("satdes").innerHTML=value2.list[5].weather[0].description;
+            document.getElementById("sattemp").innerHTML="Temp. :"+value2.list[5].main.temp+"`C";
+            //sun
+            a=value2.list[6].weather[0].icon
+            document.getElementById("img7").style.backgroundImage="url("+tell(a)+")";
+            document.getElementById("sunhumi").innerHTML="Humidity:"+value2.list[6].main.humidity+"%";
+            document.getElementById("sunspeed").innerHTML="Wind:"+value2.list[6].wind.speed+" Km/h";
+            document.getElementById("sundes").innerHTML=value2.list[6].weather[0].description;
+            document.getElementById("suntemp").innerHTML="Temp. :"+value2.list[6].main.temp+"`C";
+            console.log(value2.list[6].main.temp+"`C")
+        }) 
+        
+        var now =new Date();
+        let day=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+        let months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        
+        daily();
+        function daily()
+        {
+            
+            document.getElementById("time").innerHTML=now.getHours()+":"+now.getMinutes()
+        if(now.getHours()==0)
+            {
+                if(now.getMinutes()>9)
+                document.getElementById("time").innerHTML="00:"+now.getMinutes()+" AM";
+                else
+                document.getElementById("time").innerHTML="00:0"+now.getMinutes()+" AM";
+
+            }
+        else if (now.getHours()>12)
+        {
+            if(now.getMinutes()>9)
+                document.getElementById("time").innerHTML=now.getHours()+":"+now.getMinutes()+" PM"
+            else
+            document.getElementById("time").innerHTML=now.getHours()+":0"+now.getMinutes()+" PM"
+        }
+        else{
+            document.getElementById("time").innerHTML=now.getHours()+":"+now.getMinutes()+"<span>AM</span>";
+        }
+       if(now.getDate()<=9)
+       {
+        document.getElementById("day").innerHTML=day[now.getDay()]+","+"0"+now.getDate()+" "+months[now.getMonth()];
+       }
+       else
+       document.getElementById("day").innerHTML=day[now.getDay()]+","+now.getDate()+" "+months[now.getMonth()];
+       
+        }
+        
+    
+    </script>
+    
+</body>
+<script>
+   
+</script>
+</html>
